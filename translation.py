@@ -30,7 +30,7 @@ class Translator():
         else:
             tokenized_sentence = sentence
 
-        text_to_indices = [self.stoi_ger[token] for token in tokenized_sentence]
+        text_to_indices = [self.stoi_ger[token] if token in self.stoi_ger else self.stoi_ger['<UNK>'] for token in tokenized_sentence]
 
         sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
 
@@ -59,7 +59,7 @@ class Translator():
 if __name__=='__main__':
     translator = Translator()
 
-    sentence = "Ein Hund sitzt auf einem Felsen"
+    sentence = "ein schickes mädchen spricht mit dem handy während sie langsam die straße entlangschwebt ."
 
     
     model = models.Seq2SeqTransformer(embedding_size=utils.EMBED_SIZE,

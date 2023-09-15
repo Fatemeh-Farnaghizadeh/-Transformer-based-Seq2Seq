@@ -1,7 +1,5 @@
 import torch 
 from torch import nn
-import pandas as pd
-import spacy
 import json
 
 
@@ -15,15 +13,15 @@ DE_VAL_PATH = r'.\data\val_de.txt'
 EN_TEST_PATH = r'.\data\test_en.txt'
 DE_TEST_PATH = r'.\data\test_de.txt'
 
-BATCH_SIZE = 10
+BATCH_SIZE = 32
 NUM_WORKERS = 1
 SHUFFLE = True
 PIN_MEMORY = True
 BATCh_FIRST = False
 
 #Train_Settings
-EPOCHS = 2
-EMBED_SIZE = 32 
+EPOCHS = 5
+EMBED_SIZE = 512 
 NUM_HEADS = 8
 NUM_LAYERS_ENCODER = 3
 NUM_LAYERS_DECODER = 3

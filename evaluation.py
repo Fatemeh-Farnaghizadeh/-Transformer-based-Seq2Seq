@@ -52,7 +52,9 @@ def main():
         translated = translator_obj.translate_sentence(model, str_sources[j], utils.DEVICE, max_length=50, eval=True)
         translated_all.append(translated)
     
-    str_targets = [seq[1:] for seq in str_targets]
+    str_targets = [[seq[1:]] for seq in str_targets]
+    print(str_targets)
+    print(translated_all)
 
     return(bleu_score(translated_all, str_targets))
 

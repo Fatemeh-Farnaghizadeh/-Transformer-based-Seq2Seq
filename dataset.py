@@ -98,7 +98,7 @@ class Vocabulary:
             self.stoi_en[token] if token in self.stoi_en else self.stoi_en["<UNK>"]
             for token in tokenized_text
         ]
-    
+      
         
 class CustomDataset(Dataset):
     
